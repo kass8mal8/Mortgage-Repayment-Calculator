@@ -1,0 +1,44 @@
+// Primary colors
+$lime: hsl(61, 70%, 52%);
+$red: hsl(4, 69%, 50%);
+
+// Neutral colors
+$white: hsl(0, 0%, 100%);
+$slate-100: hsl(202, 86%, 94%);
+$slate-300: hsl(203, 41%, 72%);
+$slate-500: hsl(200, 26%, 54%);
+$slate-700: hsl(200, 24%, 40%);
+$slate-900: hsl(202, 55%, 16%);
+
+// Font
+
+@font-face {
+	font-family: jakarta;
+	src: url(../../assets/fonts/PlusJakartaSans-Medium.ttf);
+}
+
+@font-face {
+	font-family: jakarta-bold;
+	src: url(../../assets/fonts/PlusJakartaSans-Bold.ttf);
+}
+
+$jakarta: jakarta;
+$jakarta-bold: jakarta-bold;
+
+@mixin responsive($breakpoint) {
+	@if ($breakpoint == "desktop") {
+		@media (width > 768px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == "tablet") {
+		@media (width > 426px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == "mobile") {
+		@media (width < 425px) {
+			@content;
+		}
+	}
+}

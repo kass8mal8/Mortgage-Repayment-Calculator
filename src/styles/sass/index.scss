@@ -1,0 +1,206 @@
+@import "./_variables.scss";
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: $jakarta;
+}
+
+body {
+	@include responsive("desktop") {
+		background: $slate-100;
+	}
+}
+
+.container {
+	padding-inline: 1.4rem;
+	gap: 20px;
+
+	.wrapper {
+		.calculator {
+			// width: 100%;
+			background: $white;
+
+			.header {
+				h5 {
+					margin: 0.5rem 0;
+				}
+			}
+
+			.label {
+				margin: 10px 0;
+				color: $slate-700;
+			}
+
+			ul {
+				margin-top: 20px;
+				h6 {
+					font-size: 16px;
+					color: $slate-700;
+				}
+				li {
+					list-style: none;
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					border: 2px solid $slate-300;
+					padding: 0.8rem;
+					border-radius: 3px;
+					margin: 10px 0;
+
+					input {
+						width: 15px;
+						height: 15px;
+					}
+
+					&:has(input:checked) {
+						border-color: $lime;
+						accent-color: $lime;
+						outline: none;
+					}
+				}
+			}
+
+			.btn {
+				background: $lime;
+				box-shadow: none;
+				text-transform: capitalize;
+				color: $slate-900;
+				font-weight: 600;
+				border-radius: 2em;
+				margin-top: 10px;
+				padding: 10px 20px;
+
+				@include responsive("mobile") {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.result {
+		background: #133040;
+		width: 100lvw;
+		margin-left: -1.5rem;
+		margin-top: 20px;
+		padding-block: 2em;
+
+		.empty {
+			text-align: center;
+			color: $white;
+
+			h5 {
+				margin: 10px 0;
+				font-weight: bold;
+			}
+
+			p {
+				opacity: 0.6;
+			}
+		}
+
+		.full {
+			padding-inline: 2em;
+
+			.mortgage {
+				padding: 15px;
+				background: #0e2431;
+				margin-top: 2em;
+				border-radius: 10px;
+				border-top: 3px solid $lime;
+
+				.stack {
+					color: $lime;
+					align-items: center;
+
+					h4 {
+						font-size: 3em;
+					}
+				}
+			}
+
+			p {
+				opacity: 0.6;
+				color: $white;
+			}
+
+			h5 {
+				margin-bottom: 20px;
+				color: $white;
+			}
+		}
+	}
+
+	a {
+		color: $slate-700;
+	}
+
+	@include responsive("desktop") {
+		margin-left: 13em;
+		padding: 2em;
+		width: 70%;
+
+		.calculator {
+			border: 1px solid $white;
+			padding: 10px 30px;
+			border-top-left-radius: 15px;
+			border-bottom-left-radius: 15px;
+			padding-right: 5em;
+			width: 70%;
+
+			.btn {
+				margin: 15px 0;
+				width: 65%;
+			}
+		}
+
+		.result {
+			width: 70%;
+			margin-left: -3em;
+			margin-top: 0;
+			border: 2px solid $slate-900;
+			// height: 87lvh;
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+			border-bottom-left-radius: 4em;
+			padding: 2em 0 5.1em 0;
+
+			.empty {
+				// margin-top: 4em;
+				padding: 4.4em 0;
+				width: 90%;
+				margin-inline: auto;
+
+				p {
+					font-size: 11.4pt;
+				}
+			}
+		}
+
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 0px;
+		}
+	}
+
+	@include responsive("tablet") {
+		.header {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		form {
+			.stack {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 20px;
+			}
+		}
+	}
+}

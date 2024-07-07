@@ -10,6 +10,10 @@
 body {
 	@include responsive("desktop") {
 		background: $slate-100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100lvh;
 	}
 }
 
@@ -137,17 +141,17 @@ body {
 	}
 
 	@include responsive("desktop") {
-		margin-left: 13em;
-		padding: 2em;
+		background: $white;
+		padding-inline: 0;
 		width: 70%;
+		border-radius: 15px;
+		overflow: hidden;
+		margin-left: 13em;
 
 		.calculator {
-			border: 1px solid $white;
 			padding: 10px 30px;
-			border-top-left-radius: 15px;
-			border-bottom-left-radius: 15px;
-			padding-right: 5em;
-			width: 70%;
+			width: 50%;
+			border-radius: 15px;
 
 			.btn {
 				margin: 15px 0;
@@ -156,19 +160,16 @@ body {
 		}
 
 		.result {
-			width: 70%;
-			margin-left: -3em;
+			width: 50%;
 			margin-top: 0;
 			border: 2px solid $slate-900;
-			// height: 87lvh;
-			border-top-right-radius: 15px;
-			border-bottom-right-radius: 15px;
+
 			border-bottom-left-radius: 4em;
 			padding: 2em 0 5.1em 0;
 
 			.empty {
 				// margin-top: 4em;
-				padding: 4.4em 0;
+				padding: 4.4em 0.4em;
 				width: 90%;
 				margin-inline: auto;
 
